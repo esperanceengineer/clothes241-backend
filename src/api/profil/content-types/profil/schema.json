@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profils",
+  "info": {
+    "singularName": "profil",
+    "pluralName": "profils",
+    "displayName": "Profil"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "libelle": {
+      "type": "string"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "profil"
+    }
+  }
+}

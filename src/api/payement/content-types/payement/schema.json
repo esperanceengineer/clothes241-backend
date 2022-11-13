@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payements",
+  "info": {
+    "singularName": "payement",
+    "pluralName": "payements",
+    "displayName": "Payement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Statut": {
+      "type": "boolean"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "panier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::panier.panier",
+      "inversedBy": "payement"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "payement"
+    }
+  }
+}

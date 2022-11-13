@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paniers",
+  "info": {
+    "singularName": "panier",
+    "pluralName": "paniers",
+    "displayName": "Panier"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime"
+    },
+    "quantite": {
+      "type": "integer"
+    },
+    "produit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::produit.produit",
+      "inversedBy": "paniers"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "paniers"
+    },
+    "payement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payement.payement",
+      "inversedBy": "panier"
+    }
+  }
+}
